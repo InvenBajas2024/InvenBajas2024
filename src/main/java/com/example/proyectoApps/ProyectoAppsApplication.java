@@ -19,7 +19,7 @@ public class ProyectoAppsApplication {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
-                        .allowedOrigins("http://localhost:8100")
+                        .allowedOrigins("http://sql3.freesqldatabase.com:3306")
                         .allowCredentials(true)
                         .allowedHeaders("Origin", "Authorization", "Content-Type")
                         .allowedMethods("GET", "POST", "PUT", "DELETE");
