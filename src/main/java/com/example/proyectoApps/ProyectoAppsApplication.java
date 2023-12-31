@@ -19,7 +19,7 @@ public class ProyectoAppsApplication {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
-                        .allowedOrigins("https://bajas-inventario.azurewebsites.net")
+                        .allowedOrigins("https://bajas-inventario.azurewebsites.net/inventario")
                         .allowCredentials(true)
                         .allowedHeaders("Origin", "Authorization", "Content-Type")
                         .allowedMethods("GET", "POST", "PUT", "DELETE");
