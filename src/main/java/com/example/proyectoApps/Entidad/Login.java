@@ -1,8 +1,11 @@
 
 package com.example.proyectoApps.Entidad;
 
+import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
@@ -10,6 +13,9 @@ import jakarta.persistence.Table;
 @Table (name="login")
 public class Login {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Basic(optional = false)
+    @Column(name = "id")
     private int id;
     @Column(length = 50)
     private String usuario;
