@@ -18,52 +18,77 @@ public class InventarioBajas {
     @Column(name = "id")
     private int id;
     
-    @Column(length = 50)
-    private String nombreSolicitante;
-    private int numPersonal;
-    private String correoInstitucional;
-    private String entidadAcademica;
+    @Column(length = 100)
+    private String noInventario;
+    
+    private String edificio;
+    private String salon;
+    
     private String tipoEquipo;
     private String marca;
     private String modelo;
-    private String noInventario;
     private String noSerie;
-    private String discoDuro;
-    private int cantidadDD;
-    private String tipoDD;
-    private String capacidadDD;
-    private String memoriaRAM;
-    private int cantidadMemoriasRam;
-    private String tipoRAM;
-    private String capacidadRAM;
+    //componentes DD
+    private String marcaDiscoDuroUno;
+    private String modeloDiscoDuroUno;
+    private String serieDiscoDuroUno;
+    private String tipoDiscoDuroUno;
+    private String capacidadDiscoDuroUno;
+    private String tipoBorradoDiscoDuroUno;
+    
+    private String marcaDiscoDuroDos;
+    private String modeloDiscoDuroDos;
+    private String serieDiscoDuroDos;
+    private String tipoDiscoDuroDos;
+    private String capacidadDiscoDuroDos;
+    private String tipoBorradoDiscoDuroDos;
+    //componentes RAM
+    private String marcaRamUno;
+    private String tipoRamUno;
+    private String capacidadRamUno;
+    
+    private String marcaRamDos;
+    private String tipoRamDos;
+    private String capacidadRamDos;
+    //Dictamen
     private String tipoDictamen;
     private String descripcionDetallada;
 
     public InventarioBajas() {
     }
 
-    public InventarioBajas(int id, String nombreSolicitante, int numPersonal, String correoInstitucional, String entidadAcademica, String tipoEquipo, String marca, String modelo, String noInventario, String noSerie, String discoDuro, int cantidadDD, String tipoDD, String capacidadDD, String memoriaRAM, int cantidadMemoriasRam, String tipoRAM, String capacidadRAM, String tipoDictamen, String descripcionDetallada) {
+    public InventarioBajas(int id, String noInventario, String edificio, String salon, String tipoEquipo, String marca, String modelo, String noSerie, String marcaDiscoDuroUno, String modeloDiscoDuroUno, String serieDiscoDuroUno, String tipoDiscoDuroUno, String capacidadDiscoDuroUno, String tipoBorradoDiscoDuroUno, String marcaDiscoDuroDos, String modeloDiscoDuroDos, String serieDiscoDuroDos, String tipoDiscoDuroDos, String capacidadDiscoDuroDos, String tipoBorradoDiscoDuroDos, String marcaRamUno, String tipoRamUno, String capacidadRamUno, String marcaRamDos, String tipoRamDos, String capacidadRamDos, String tipoDictamen, String descripcionDetallada) {
         this.id = id;
-        this.nombreSolicitante = nombreSolicitante;
-        this.numPersonal = numPersonal;
-        this.correoInstitucional = correoInstitucional;
-        this.entidadAcademica = entidadAcademica;
+        this.noInventario = noInventario;
+        this.edificio = edificio;
+        this.salon = salon;
         this.tipoEquipo = tipoEquipo;
         this.marca = marca;
         this.modelo = modelo;
-        this.noInventario = noInventario;
         this.noSerie = noSerie;
-        this.discoDuro = discoDuro;
-        this.cantidadDD = cantidadDD;
-        this.tipoDD = tipoDD;
-        this.capacidadDD = capacidadDD;
-        this.memoriaRAM = memoriaRAM;
-        this.cantidadMemoriasRam = cantidadMemoriasRam;
-        this.tipoRAM = tipoRAM;
-        this.capacidadRAM = capacidadRAM;
+        this.marcaDiscoDuroUno = marcaDiscoDuroUno;
+        this.modeloDiscoDuroUno = modeloDiscoDuroUno;
+        this.serieDiscoDuroUno = serieDiscoDuroUno;
+        this.tipoDiscoDuroUno = tipoDiscoDuroUno;
+        this.capacidadDiscoDuroUno = capacidadDiscoDuroUno;
+        this.tipoBorradoDiscoDuroUno = tipoBorradoDiscoDuroUno;
+        this.marcaDiscoDuroDos = marcaDiscoDuroDos;
+        this.modeloDiscoDuroDos = modeloDiscoDuroDos;
+        this.serieDiscoDuroDos = serieDiscoDuroDos;
+        this.tipoDiscoDuroDos = tipoDiscoDuroDos;
+        this.capacidadDiscoDuroDos = capacidadDiscoDuroDos;
+        this.tipoBorradoDiscoDuroDos = tipoBorradoDiscoDuroDos;
+        this.marcaRamUno = marcaRamUno;
+        this.tipoRamUno = tipoRamUno;
+        this.capacidadRamUno = capacidadRamUno;
+        this.marcaRamDos = marcaRamDos;
+        this.tipoRamDos = tipoRamDos;
+        this.capacidadRamDos = capacidadRamDos;
         this.tipoDictamen = tipoDictamen;
         this.descripcionDetallada = descripcionDetallada;
     }
+
+    
 
     public int getId() {
         return id;
@@ -73,36 +98,12 @@ public class InventarioBajas {
         this.id = id;
     }
 
-    public String getNombreSolicitante() {
-        return nombreSolicitante;
+    public String getNoInventario() {
+        return noInventario;
     }
 
-    public void setNombreSolicitante(String nombreSolicitante) {
-        this.nombreSolicitante = nombreSolicitante;
-    }
-
-    public int getNumPersonal() {
-        return numPersonal;
-    }
-
-    public void setNumPersonal(int numPersonal) {
-        this.numPersonal = numPersonal;
-    }
-
-    public String getCorreoInstitucional() {
-        return correoInstitucional;
-    }
-
-    public void setCorreoInstitucional(String correoInstitucional) {
-        this.correoInstitucional = correoInstitucional;
-    }
-
-    public String getEntidadAcademica() {
-        return entidadAcademica;
-    }
-
-    public void setEntidadAcademica(String entidadAcademica) {
-        this.entidadAcademica = entidadAcademica;
+    public void setNoInventario(String noInventario) {
+        this.noInventario = noInventario;
     }
 
     public String getTipoEquipo() {
@@ -129,14 +130,6 @@ public class InventarioBajas {
         this.modelo = modelo;
     }
 
-    public String getNoInventario() {
-        return noInventario;
-    }
-
-    public void setNoInventario(String noInventario) {
-        this.noInventario = noInventario;
-    }
-
     public String getNoSerie() {
         return noSerie;
     }
@@ -145,68 +138,148 @@ public class InventarioBajas {
         this.noSerie = noSerie;
     }
 
-    public String getDiscoDuro() {
-        return discoDuro;
+    public String getMarcaDiscoDuroUno() {
+        return marcaDiscoDuroUno;
     }
 
-    public void setDiscoDuro(String discoDuro) {
-        this.discoDuro = discoDuro;
+    public void setMarcaDiscoDuroUno(String marcaDiscoDuroUno) {
+        this.marcaDiscoDuroUno = marcaDiscoDuroUno;
     }
 
-    public int getCantidadDD() {
-        return cantidadDD;
+    public String getModeloDiscoDuroUno() {
+        return modeloDiscoDuroUno;
     }
 
-    public void setCantidadDD(int cantidadDD) {
-        this.cantidadDD = cantidadDD;
+    public void setModeloDiscoDuroUno(String modeloDiscoDuroUno) {
+        this.modeloDiscoDuroUno = modeloDiscoDuroUno;
     }
 
-    public String getTipoDD() {
-        return tipoDD;
+    public String getSerieDiscoDuroUno() {
+        return serieDiscoDuroUno;
     }
 
-    public void setTipoDD(String tipoDD) {
-        this.tipoDD = tipoDD;
+    public void setSerieDiscoDuroUno(String serieDiscoDuroUno) {
+        this.serieDiscoDuroUno = serieDiscoDuroUno;
     }
 
-    public String getCapacidadDD() {
-        return capacidadDD;
+    public String getTipoDiscoDuroUno() {
+        return tipoDiscoDuroUno;
     }
 
-    public void setCapacidadDD(String capacidadDD) {
-        this.capacidadDD = capacidadDD;
+    public void setTipoDiscoDuroUno(String tipoDiscoDuroUno) {
+        this.tipoDiscoDuroUno = tipoDiscoDuroUno;
     }
 
-    public String getMemoriaRAM() {
-        return memoriaRAM;
+    public String getCapacidadDiscoDuroUno() {
+        return capacidadDiscoDuroUno;
     }
 
-    public void setMemoriaRAM(String memoriaRAM) {
-        this.memoriaRAM = memoriaRAM;
+    public void setCapacidadDiscoDuroUno(String capacidadDiscoDuroUno) {
+        this.capacidadDiscoDuroUno = capacidadDiscoDuroUno;
     }
 
-    public int getCantidadMemoriasRam() {
-        return cantidadMemoriasRam;
+    public String getTipoBorradoDiscoDuroUno() {
+        return tipoBorradoDiscoDuroUno;
     }
 
-    public void setCantidadMemoriasRam(int cantidadMemoriasRam) {
-        this.cantidadMemoriasRam = cantidadMemoriasRam;
+    public void setTipoBorradoDiscoDuroUno(String tipoBorradoDiscoDuroUno) {
+        this.tipoBorradoDiscoDuroUno = tipoBorradoDiscoDuroUno;
     }
 
-    public String getTipoRAM() {
-        return tipoRAM;
+    public String getMarcaDiscoDuroDos() {
+        return marcaDiscoDuroDos;
     }
 
-    public void setTipoRAM(String tipoRAM) {
-        this.tipoRAM = tipoRAM;
+    public void setMarcaDiscoDuroDos(String marcaDiscoDuroDos) {
+        this.marcaDiscoDuroDos = marcaDiscoDuroDos;
     }
 
-    public String getCapacidadRAM() {
-        return capacidadRAM;
+    public String getModeloDiscoDuroDos() {
+        return modeloDiscoDuroDos;
     }
 
-    public void setCapacidadRAM(String capacidadRAM) {
-        this.capacidadRAM = capacidadRAM;
+    public void setModeloDiscoDuroDos(String modeloDiscoDuroDos) {
+        this.modeloDiscoDuroDos = modeloDiscoDuroDos;
+    }
+
+    public String getSerieDiscoDuroDos() {
+        return serieDiscoDuroDos;
+    }
+
+    public void setSerieDiscoDuroDos(String serieDiscoDuroDos) {
+        this.serieDiscoDuroDos = serieDiscoDuroDos;
+    }
+
+    public String getTipoDiscoDuroDos() {
+        return tipoDiscoDuroDos;
+    }
+
+    public void setTipoDiscoDuroDos(String tipoDiscoDuroDos) {
+        this.tipoDiscoDuroDos = tipoDiscoDuroDos;
+    }
+
+    public String getCapacidadDiscoDuroDos() {
+        return capacidadDiscoDuroDos;
+    }
+
+    public void setCapacidadDiscoDuroDos(String capacidadDiscoDuroDos) {
+        this.capacidadDiscoDuroDos = capacidadDiscoDuroDos;
+    }
+
+    public String getTipoBorradoDiscoDuroDos() {
+        return tipoBorradoDiscoDuroDos;
+    }
+
+    public void setTipoBorradoDiscoDuroDos(String tipoBorradoDiscoDuroDos) {
+        this.tipoBorradoDiscoDuroDos = tipoBorradoDiscoDuroDos;
+    }
+
+    public String getMarcaRamUno() {
+        return marcaRamUno;
+    }
+
+    public void setMarcaRamUno(String marcaRamUno) {
+        this.marcaRamUno = marcaRamUno;
+    }
+
+    public String getTipoRamUno() {
+        return tipoRamUno;
+    }
+
+    public void setTipoRamUno(String tipoRamUno) {
+        this.tipoRamUno = tipoRamUno;
+    }
+
+    public String getCapacidadRamUno() {
+        return capacidadRamUno;
+    }
+
+    public void setCapacidadRamUno(String capacidadRamUno) {
+        this.capacidadRamUno = capacidadRamUno;
+    }
+
+    public String getMarcaRamDos() {
+        return marcaRamDos;
+    }
+
+    public void setMarcaRamDos(String marcaRamDos) {
+        this.marcaRamDos = marcaRamDos;
+    }
+
+    public String getTipoRamDos() {
+        return tipoRamDos;
+    }
+
+    public void setTipoRamDos(String tipoRamDos) {
+        this.tipoRamDos = tipoRamDos;
+    }
+
+    public String getCapacidadRamDos() {
+        return capacidadRamDos;
+    }
+
+    public void setCapacidadRamDos(String capacidadRamDos) {
+        this.capacidadRamDos = capacidadRamDos;
     }
 
     public String getTipoDictamen() {
@@ -225,7 +298,22 @@ public class InventarioBajas {
         this.descripcionDetallada = descripcionDetallada;
     }
 
+    public String getEdificio() {
+        return edificio;
+    }
+
+    public void setEdificio(String edificio) {
+        this.edificio = edificio;
+    }
+
+    public String getSalon() {
+        return salon;
+    }
+
+    public void setSalon(String salon) {
+        this.salon = salon;
+    }
+
     
-    
-    
+
 }
